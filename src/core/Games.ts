@@ -49,7 +49,7 @@ export class Games {
         this._viewer.showNext(this._nextTetris)
     }
 
-    private resetCenterPoint(width:number, tetris:SquareGroup){
+    private resetCenterPoint = (width:number, tetris:SquareGroup) => {
         const x = Math.ceil(width / 2) - 1
         const y = 0
         tetris.centerPoint = {x, y}
@@ -61,7 +61,7 @@ export class Games {
                 }
             })
         }
-    }
+    };
 
     controlDown(){
         if(this._gameStatus === GameStatus.playing && this._curTetris){
