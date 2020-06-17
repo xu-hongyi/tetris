@@ -4,22 +4,45 @@
     <meta charset="UTF-8">
     <title>Tetris</title>
     <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
         #root {
+            display: flex;
+            justify-content: center;
+        }
+
+        #panel {
             position: relative;
-            height: 450px;
             width: 450px;
-            background: #000;
-            margin: 0 auto;
+            height: 450px;
+            background: black;
+        }
+
+        #next {
+            position: relative;
+            width: 100px;
+            height: 100px;
         }
     </style>
 </head>
 <body>
-<div id="root"></div>
-<button id="remove">消失</button>
-<button id="down">下落</button>
+<div id="root">
+    <div id="panel"></div>
+    <div id="tip">
+        <div id="next">
+
+        </div>
+    </div>
+</div>
 <button id="left">向左</button>
 <button id="right">向右</button>
-<button id="up">向上</button>
-<button id="rotate">旋转</button>
+<button id="down">向下</button>
+<button id="up">旋转</button>
+<button id="play">开始</button>
+<button id="pause">暂停</button>
+
 </body>
 </html>

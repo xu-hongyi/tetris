@@ -1,37 +1,23 @@
-import SquarePageViewer from "@/core/viewer/SquarePageViewer";
+import {Games} from "@/core/Games";
+import {GamePageViewer} from "@/core/viewer/GamePageViewer";
 import $ from 'jquery'
-import {createTetris} from "@/core/Tetris";
-import {TetrisRules} from "@/core/TetrisRule";
-import {MoveDirection} from "@/core/types";
+const game = new Games(new GamePageViewer())
 
-const squareGroup = createTetris({x:5, y:5})
-
-squareGroup.squares.forEach(s =>{
-    s.viewer = new SquarePageViewer(s, $("#root"))
+$("#left").on('click', () =>{
+    game.controlLeft()
 })
-
-$('#down').click(() =>{
-    TetrisRules.move(squareGroup, MoveDirection.down)
+$("#right").on('click', () =>{
+    game.controlRight()
 })
-
-$('#left').click(() =>{
-    TetrisRules.move(squareGroup, MoveDirection.left)
+$("#down").on('click', () =>{
+    game.controlDown()
 })
-
-$('#right').click(() =>{
-    TetrisRules.move(squareGroup, MoveDirection.right)
+$("#up").on('click', () =>{
+    game.controlRotate()
 })
-
-$("#rotate").on('click', () =>{
-    TetrisRules.rotate(squareGroup)
+$("#play").on('click', () =>{
+    game.start()
 })
-// $('#up').click(() =>{
-//     TetrisRules.moveDirectly(squareGroup, {
-//         x:squareGroup.centerPoint.x,
-//         y:squareGroup.centerPoint.y - 1
-//     })
-// })
-
-// $('#remove').click(() =>{
-//     sq.viewer?.remove()
-// })
+$("#pause").on('click', () =>{
+    game.pause()
+})
