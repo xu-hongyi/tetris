@@ -1,5 +1,5 @@
 import SquareGroup from "@/core/SquareGroup";
-
+import {Game} from "@/core/Game";
 export interface IPoint {
     readonly x:number
     readonly y:number
@@ -31,5 +31,13 @@ export interface GameViewer {
     showNext(tetris:SquareGroup):void
 
     switch(tetris:SquareGroup):void
+
+    showScore(score:number):void
+
+    init(game:Game):void
+
+    onGameStart():void
+    onGamePause():void
+    onGameOver():void
 }
 

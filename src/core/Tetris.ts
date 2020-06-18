@@ -97,7 +97,6 @@ const colors = [
     'green',
     'yellow',
     'red',
-    'white'
 ]
 
 export function createTetris(centerPoint: IPoint) {
